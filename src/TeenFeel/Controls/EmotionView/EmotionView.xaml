@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentView
+    x:Name="this"
+    xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    x:Class="TeenFeel.Controls.EmotionView">
+    <ContentView.Resources>
+        <ResourceDictionary>
+
+            <Style x:Key="EmotionPathStyle" TargetType="Path">
+                <Setter Property="HeightRequest" Value="100" />
+                <Setter Property="WidthRequest" Value="100" />
+                <Setter Property="HorizontalOptions" Value="Center" />
+                <Setter Property="VerticalOptions" Value="Center" />
+            </Style>
+                       
+            <Style x:Key="EmotionIconStyle" TargetType="Image">
+                <Setter Property="Aspect" Value="AspectFit" />
+                <Setter Property="WidthRequest" Value="60" />
+                <Setter Property="HorizontalOptions" Value="Center" />
+                <Setter Property="VerticalOptions" Value="Center" />
+            </Style>
+
+        </ResourceDictionary>
+    </ContentView.Resources>
+    <Grid>
+        <Path 
+            Fill="{Binding Color, Source={x:Reference this}}"
+            Data="M9.166.33a2.25 2.25 0 00-2.332 0l-5.25 3.182A2.25 2.25 0 00.5 5.436v5.128a2.25 2.25 0 001.084 1.924l5.25 3.182a2.25 2.25 0 002.332 0l5.25-3.182a2.25 2.25 0 001.084-1.924V5.436a2.25 2.25 0 00-1.084-1.924L9.166.33z">
+            <Path.RenderTransform>
+                <CompositeTransform 
+                    ScaleX="6"
+                    ScaleY="6"
+                    TranslateX="12"
+                    TranslateY="54"/>
+            </Path.RenderTransform>
+        </Path>
+        <Image
+            Source="{Binding Icon, Source={x:Reference this}}"
+            Style="{StaticResource EmotionIconStyle}"/>
+    </Grid>
+</ContentView>

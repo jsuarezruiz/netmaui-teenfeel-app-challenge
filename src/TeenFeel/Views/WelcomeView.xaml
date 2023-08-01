@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage 
+    xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    x:Class="TeenFeel.Views.WelcomeView"
+    xmlns:controls="clr-namespace:TeenFeel.Controls"
+    Shell.NavBarIsVisible="False"
+    Background="{StaticResource Accent}">
+    <ContentPage.Resources>
+        <ResourceDictionary>
+
+            <Style x:Key="SkipStyle" TargetType="Label">
+                <Setter Property="FontFamily" Value="RecoletaMedium" />
+                <Setter Property="TextColor" Value="White" />
+                <Setter Property="HorizontalOptions" Value="End" />
+                <Setter Property="Margin" Value="0, 32, 24, 0" />
+            </Style>
+
+            <Style x:Key="TitleStyle" TargetType="Label">
+                <Setter Property="FontFamily" Value="RecoletaMedium" />
+                <Setter Property="TextColor" Value="White" />
+                <Setter Property="FontSize" Value="28" />
+                <Setter Property="HorizontalOptions" Value="Center" />
+                <Setter Property="HorizontalTextAlignment" Value="Center" />
+                <Setter Property="Margin" Value="24, 0" />
+            </Style>
+
+            <Style x:Key="SubTitleStyle" TargetType="Label">
+                <Setter Property="FontFamily" Value="RecoletaMedium" />
+                <Setter Property="TextColor" Value="White" />
+                <Setter Property="FontSize" Value="14" />
+                <Setter Property="HorizontalOptions" Value="Center" />
+                <Setter Property="HorizontalTextAlignment" Value="Center" />
+                <Setter Property="Margin" Value="60, 12" />
+            </Style>
+            
+            <Style x:Key="NextButtonStyle" TargetType="Border">
+                <Setter Property="StrokeShape" Value="Ellipse" />
+                <Setter Property="Background" Value="{StaticResource Pink}" />
+                <Setter Property="HeightRequest" Value="80" />
+                <Setter Property="WidthRequest" Value="80" />
+            </Style>
+            
+            <Style x:Key="NextButtonIconStyle" TargetType="Image">
+                <Setter Property="Aspect" Value="AspectFit" />
+                <Setter Property="WidthRequest" Value="48" />
+            </Style>
+
+            <Style x:Key="NextCircularProgressBarStyle" TargetType="controls:CircularProgressBar">
+                <Setter Property="StrokeColor" Value="#528BEC" />
+                <Setter Property="ProgressColor" Value="White" />
+                <Setter Property="HeightRequest" Value="110" />
+                <Setter Property="WidthRequest" Value="110" />
+            </Style>
+
+        </ResourceDictionary>
+    </ContentPage.Resources>
+    <Grid
+        RowDefinitions="Auto, Auto, *">
+        <Grid>
+            <Image 
+                Source="welcome.png"/>
+            <Label 
+                Text="Skip"
+                Style="{StaticResource SkipStyle}">
+                <Label.GestureRecognizers>
+                    <TapGestureRecognizer 
+                        Tapped="OnNavigateTapped" />
+                </Label.GestureRecognizers>
+            </Label>
+        </Grid>
+        <StackLayout
+            Grid.Row="1"
+            Margin="0, 24">
+            <Label 
+                Text="Discover Your Emotional Well-being"
+                Style="{StaticResource TitleStyle}"/>
+            <Label
+                Text="Explore, Understand, and Nurture Your Teename Emotions"
+                Style="{StaticResource SubTitleStyle}"/>
+        </StackLayout>
+        <Grid
+            Grid.Row="2"
+            Margin="0, 24">
+            <controls:CircularProgressBar
+                x:Name="CircularProgress"
+                Background="Transparent"
+                Style="{StaticResource NextCircularProgressBarStyle}"/>
+            <Border
+                Style="{StaticResource NextButtonStyle}">
+                <Border.GestureRecognizers>
+                    <TapGestureRecognizer 
+                        Tapped="OnNavigateTapped" />
+                </Border.GestureRecognizers>
+                <Image 
+                    Source="play.png"
+                    Style="{StaticResource NextButtonIconStyle}"/>
+            </Border>
+        </Grid>
+    </Grid>
+</ContentPage>

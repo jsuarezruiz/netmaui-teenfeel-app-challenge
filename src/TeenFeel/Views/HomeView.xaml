@@ -1,0 +1,182 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage 
+    xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    x:Class="TeenFeel.Views.HomeView"
+    xmlns:controls="clr-namespace:TeenFeel.Controls"
+    Shell.NavBarIsVisible="False"
+    Background="White">
+    <ContentPage.Resources>
+        <ResourceDictionary>
+
+            <Style x:Key="GreetingLayoutStyle" TargetType="Grid">
+                <Setter Property="Margin" Value="12, 36" />
+            </Style>
+
+            <Style x:Key="GreetingMessage1Style" TargetType="Label">
+                <Setter Property="FontFamily" Value="RecoletaMedium" />
+                <Setter Property="FontSize" Value="20" />
+                <Setter Property="FontAttributes" Value="Bold" />
+                <Setter Property="TextColor" Value="Black" />
+            </Style>
+
+            <Style x:Key="GreetingMessage2Style" TargetType="Label">
+                <Setter Property="FontFamily" Value="RecoletaMedium" />
+                <Setter Property="FontSize" Value="20" />
+                <Setter Property="TextColor" Value="Black" />
+            </Style>
+
+            <Style x:Key="FeelingLayoutStyle" TargetType="Grid">
+                <Setter Property="Margin" Value="12, 0" />
+            </Style>
+
+            <Style x:Key="FeelingBorderMessageStyle" TargetType="Border">
+                <Setter Property="Background" Value="{StaticResource Light}" />
+                <Setter Property="StrokeShape" Value="RoundRectangle 12" />
+                <Setter Property="VerticalOptions" Value="End" />
+                <Setter Property="Margin" Value="0, 24, 0, 0" />
+            </Style>
+
+            <Style x:Key="FeelingTextStyle" TargetType="Label">
+                <Setter Property="FontSize" Value="16" />
+                <Setter Property="FontAttributes" Value="Bold" />
+                <Setter Property="TextColor" Value="Black" />
+                <Setter Property="HorizontalOptions" Value="Center" />
+                <Setter Property="Margin" Value="12, 32, 12, 24" />
+            </Style>
+
+            <Style x:Key="FeelingBorderIconStyle" TargetType="Border">
+                <Setter Property="Background" Value="{StaticResource Light}" />
+                <Setter Property="StrokeShape" Value="Ellipse" />
+                <Setter Property="VerticalOptions" Value="Start" />
+                <Setter Property="HorizontalOptions" Value="Center" />
+                <Setter Property="HeightRequest" Value="60" />
+                <Setter Property="WidthRequest" Value="60" />
+            </Style>
+
+            <Style x:Key="FeelingIconStyle" TargetType="Image">
+                <Setter Property="WidthRequest" Value="40" />
+            </Style>
+
+            <Style x:Key="EmotionsLayoutStyle" TargetType="controls:HexLayout">
+                <Setter Property="ColumnCount" Value="3" />
+                <Setter Property="RowCount" Value="3" />
+                <Setter Property="HorizontalOptions" Value="Center" />
+                <Setter Property="Margin" Value="12, 0" />
+            </Style>
+
+            <Style x:Key="LearnBorderStyle" TargetType="Border">
+                <Setter Property="Background" Value="{StaticResource Accent}" />
+                <Setter Property="StrokeShape" Value="RoundRectangle 24" />
+                <Setter Property="Margin" Value="12, 24" />
+            </Style>
+
+            <Style x:Key="LearnIconBorderStyle" TargetType="Border">
+                <Setter Property="Background" Value="{StaticResource Pink}" />
+                <Setter Property="StrokeShape" Value="Ellipse" />
+                <Setter Property="HeightRequest" Value="48" />
+                <Setter Property="WidthRequest" Value="48" />
+                <Setter Property="Margin" Value="2" />
+            </Style>
+
+            <Style x:Key="LearnTextStyle" TargetType="Label">
+                <Setter Property="TextColor" Value="White" />
+                <Setter Property="FontSize" Value="14" />
+                <Setter Property="HorizontalOptions" Value="Center" />
+                <Setter Property="VerticalOptions" Value="Center" />
+                <Setter Property="Margin" Value="12" />
+            </Style>
+
+        </ResourceDictionary>
+    </ContentPage.Resources>
+    <Grid
+        RowDefinitions="Auto, Auto, *, Auto, Auto">
+        <!-- GREETING -->
+        <Grid
+            Style="{StaticResource GreetingLayoutStyle}">
+            <HorizontalStackLayout>
+                <Label 
+                    Text="Good morning, "
+                    Style="{StaticResource GreetingMessage1Style}"/>
+                <Label 
+                    Text="Marie"
+                    Style="{StaticResource GreetingMessage2Style}"/>
+            </HorizontalStackLayout>
+        </Grid>
+        <!-- MESSAGE -->
+        <Grid
+            Grid.Row="1"
+            Style="{StaticResource FeelingLayoutStyle}">
+            <Border
+                Style="{StaticResource FeelingBorderMessageStyle}">
+                <Label 
+                    Text="What are you feeling today?"
+                    Style="{StaticResource FeelingTextStyle}"/>
+            </Border>
+            <Border
+                Style="{StaticResource FeelingBorderIconStyle}">
+                <Image 
+                    Source="feeling.png"
+                    Style="{StaticResource FeelingIconStyle}"/>
+            </Border>
+        </Grid>
+        <!-- EMOTIONS -->
+        <controls:HexLayout 
+            Grid.Row="2"
+            Orientation="Vertical"
+            Style="{StaticResource EmotionsLayoutStyle}">
+            <controls:EmotionView
+                controls:HexLayout.Row="0" 
+                controls:HexLayout.Column="1" 
+                Icon="emotion01.png"
+                Color="#FAEDF3"/>
+            <controls:EmotionView 
+                controls:HexLayout.Row="0" 
+                controls:HexLayout.Column="2"
+                Icon="emotion02.png"
+                Color="#FDF6DE"/>
+            <controls:EmotionView 
+                controls:HexLayout.Row="1" 
+                controls:HexLayout.Column="0"
+                Icon="emotion03.png"
+                Color="#EBF0FB"/>
+            <controls:EmotionView 
+                controls:HexLayout.Row="1" 
+                controls:HexLayout.Column="1" 
+                Icon="emotion04.png"
+                Color="#EFF0F0"/>
+            <controls:EmotionView 
+                controls:HexLayout.Row="1" 
+                controls:HexLayout.Column="2" 
+                Icon="emotion05.png"
+                Color="#DDF8F0"/>
+            <controls:EmotionView 
+                controls:HexLayout.Row="2" 
+                controls:HexLayout.Column="1"
+                Icon="emotion06.png"
+                Color="#D2DBF4"/>
+            <controls:EmotionView
+                controls:HexLayout.Row="2"
+                controls:HexLayout.Column="2" 
+                Icon="emotion07.png"
+                Color="#F9D9D7"/>
+        </controls:HexLayout>
+        <!-- LEARN -->
+        <Border
+            Grid.Row="3"
+            Style="{StaticResource LearnBorderStyle}">
+            <Grid
+                ColumnDefinitions="*, Auto">
+                <Label 
+                    Text="Learn about your emotions"
+                    Style="{StaticResource LearnTextStyle}"/>
+                <Border
+                    Grid.Column="1"
+                    Style="{StaticResource LearnIconBorderStyle}">
+                    <Image 
+                        Source="emotions.png"/>
+                </Border>
+            </Grid>
+        </Border>
+    </Grid>
+</ContentPage>
