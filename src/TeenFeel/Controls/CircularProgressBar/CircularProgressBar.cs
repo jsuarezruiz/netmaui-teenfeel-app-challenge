@@ -1,5 +1,6 @@
 ﻿namespace TeenFeel.Controls
 {
+    // Based on: https://mauiblogs.hashnode.dev/creating-a-circular-progress-bar-in-net-maui
     public class CircularProgressBar : GraphicsView
     {
         public CircularProgressBar()
