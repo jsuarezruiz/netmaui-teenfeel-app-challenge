@@ -49,23 +49,29 @@
 	</ItemGroup>
 
 	<ItemGroup>
-	  <None Remove="Resources\Images\emotion01.png" />
-	  <None Remove="Resources\Images\emotion02.png" />
-	  <None Remove="Resources\Images\emotion03.png" />
-	  <None Remove="Resources\Images\emotion04.png" />
-	  <None Remove="Resources\Images\emotion05.png" />
-	  <None Remove="Resources\Images\emotion06.png" />
-	  <None Remove="Resources\Images\emotion07.png" />
-	  <None Remove="Resources\Images\emotions.png" />
-	  <None Remove="Resources\Images\feeling.png" />
-	  <None Remove="Resources\Images\play.png" />
-	  <None Remove="Resources\Images\welcome.png" />
+		<None Remove="Resources\Images\emotion01.png" />
+		<None Remove="Resources\Images\emotion02.png" />
+		<None Remove="Resources\Images\emotion03.png" />
+		<None Remove="Resources\Images\emotion04.png" />
+		<None Remove="Resources\Images\emotion05.png" />
+		<None Remove="Resources\Images\emotion06.png" />
+		<None Remove="Resources\Images\emotion07.png" />
+		<None Remove="Resources\Images\emotions.png" />
+		<None Remove="Resources\Images\feeling.png" />
+		<None Remove="Resources\Images\play.png" />
+		<None Remove="Resources\Images\welcome.png" />
 	</ItemGroup>
 
 	<ItemGroup>
+		<PackageReference Include="Microsoft.Maui.Controls" Version="8.0.5" />
+		<PackageReference Include="Microsoft.Maui.Controls.Compatibility" Version="8.0.5" />
 		<PackageReference Include="Microsoft.Extensions.Logging.Debug" Version="7.0.0" />
 	</ItemGroup>
 
-	<ProjectExtensions><VisualStudio><UserProperties XamarinHotReloadUnhandledDeviceExceptionTeenFeelHideInfoBar="True" /></VisualStudio></ProjectExtensions>
+	<ProjectExtensions>
+		<VisualStudio>
+			<UserProperties XamarinHotReloadUnhandledDeviceExceptionTeenFeelHideInfoBar="True" />
+		</VisualStudio>
+	</ProjectExtensions>
 
 </Project>
